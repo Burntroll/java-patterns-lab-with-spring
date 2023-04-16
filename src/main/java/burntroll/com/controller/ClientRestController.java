@@ -1,7 +1,7 @@
 package burntroll.com.controller;
 
 import burntroll.com.model.Client;
-import burntroll.com.model.ClientService;
+import burntroll.com.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,7 +33,7 @@ public class ClientRestController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Client> searchById(@PathVariable Long id) {
-        return ResponseEntity.ok(clientService.searchById(id));
+        return ResponseEntity.ok(clientservice.searchById(id));
     }
 
     @PostMapping
@@ -43,14 +43,14 @@ public class ClientRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client cliente) {
-        clientService.update(id, client);
+    public ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client client) {
+        clientservice.update(id, client);
         return ResponseEntity.ok(client);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        clientService.delete(id);
+        clientservice.delete(id);
         return ResponseEntity.ok().build();
     }
 }

@@ -36,7 +36,7 @@ public class Client {
         return address;
     }
 
-    public void setAddress() {
-        this.address = address;
+    public void setAddress(Address address) {
+        this.address = this.address;
     }
 }
